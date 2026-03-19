@@ -900,4 +900,42 @@ footer {
     .nav-links {
         display: none;
     }
+
+    /* Features section: stack vertically on mobile */
+    .features-layout {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .features-cap-image {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+    .features-cards-col {
+        width: 100%;
+    }
+    .features-cards-col .feature-card {
+        padding: 2rem;
+    }
+    .features-cards-col .feature-card h3 {
+        font-size: 1.1rem;
+    }
+    .features-cards-col .feature-card p {
+        font-size: 1rem;
+    }
+    .features-cards-col .icon-wrapper {
+        width: 46px;
+        height: 46px;
+    }
+
+    /* Hero stats wrap on small screens */
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    /* Feature badges hide on mobile */
+    .feature-badge {
+        display: none;
+    }
 }
