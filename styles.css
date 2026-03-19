@@ -172,20 +172,138 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: #ffffff; /* Fresh white aesthetic */
+    background-color: #ffffff;
 }
+
+/* Subtle dot grid */
+.hero-dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* Layered Corner Glow */
+.hero-corner-glow {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.55;
+}
+
+.glow-cyan {
+    width: 380px;
+    height: 380px;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.22), transparent 70%);
+}
+
+.glow-purple {
+    width: 280px;
+    height: 280px;
+    top: 60px;
+    left: 80px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.18), transparent 70%);
+}
+
+.glow-amber {
+    width: 200px;
+    height: 200px;
+    top: 120px;
+    left: 40px;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.14), transparent 70%);
+}
+
+/* Hero stats strip */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding: 1rem 2rem;
+    background: rgba(248, 250, 252, 0.9);
+    border: 1px solid var(--border-color);
+    border-radius: 60px;
+    backdrop-filter: blur(8px);
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.hero-stat-value {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.hero-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-stat-divider {
+    width: 1px;
+    height: 28px;
+    background: var(--border-color);
+}
+
+/* Dynamic color label */
+.color-label-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.color-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    transition: background 0.6s ease;
+    display: inline-block;
+}
+
+.color-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    transition: color 0.4s ease;
+}
+
 
 .hero-background {
     position: absolute;
-    top: 50%;
-    right: 5%;
-    width: 80vw;
-    height: 80vw;
-    background: radial-gradient(circle, rgba(148, 163, 184, 0.2) 0%, rgba(255, 255, 255, 0) 60%);
-    transform: translate(0%, -50%);
-    border-radius: 50%;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 65% 50%, rgba(148, 163, 184, 0.2) 0%, rgba(255, 255, 255, 0) 65%);
     transition: background 1s ease-in-out;
     pointer-events: none;
+    z-index: 0;
 }
 
 .hero-content-wrapper {
@@ -387,6 +505,74 @@ body {
 /* Features */
 .features {
     padding: 6rem 5%;
+}
+
+/* Features split layout */
+.features-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-image-col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.features-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.features-cap-image {
+    width: 100%;
+    max-width: 520px;
+    border-radius: 24px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.06);
+    display: block;
+}
+
+.features-image-glow {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 60px;
+    background: rgba(0, 212, 255, 0.15);
+    filter: blur(30px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.features-cards-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.features-cards-col .feature-card {
+    padding: 1.5rem;
+}
+
+.features-cards-col .feature-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.features-cards-col .feature-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.features-cards-col .icon-wrapper {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 1rem;
 }
 
 .features-grid {
